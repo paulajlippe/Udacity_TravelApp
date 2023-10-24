@@ -1,0 +1,44 @@
+$color_1: white;
+$color_2: black;
+$color_3: #24826A;
+$font-family_1: "Gill Sans", sans-serif;
+$font-family_2: Helvetica, serif;
+$font-family_3: "Courier New", monospace;
+$background-color_1: whitesmoke;
+$background-color_2: #ccc;
+$background-color_3: #333;
+$background-color_4: #24826A;
+
+form {
+	border: 2px solid $background-color_3;
+	border-radius: 3px;
+	padding: 40px;
+	background-color: $background-color_1;
+}
+#button {
+	font-family: $font-family_2;
+	color: $color_1;
+    padding: 5px;
+    margin: 0px, 50px;
+    line-height: 16px;
+	width: 100%;
+    border-radius: 5px;
+    background-color: $background-color_4;
+}
+#input {
+	padding: 5px;
+	width: 80%;
+	line-height: 16px;
+	
+}
+#submit {
+	font-family: $font-family_2;
+	color: $color_1;
+    padding: 5px;
+    margin: 0px, 50px;
+    line-height: 16px;
+	width: 100%;
+    border-radius: 5px;
+    background-color: $background-color_4;
+}
+

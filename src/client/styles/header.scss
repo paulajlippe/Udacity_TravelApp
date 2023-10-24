@@ -1,0 +1,22 @@
+$color_1: white;
+$color_2: black;
+$font-family_1: "Gill Sans", sans-serif;
+$font-family_2: Helvetica, serif;
+$font-family_3: "Courier New", monospace;
+$background-color_1: whitesmoke;
+$background-color_2: #ccc;
+$background-color_3: #01060C;
+
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 40px;
+	background-color: $background-color_3;
+}
+
+#image {
+	width: 300px;
+	height: auto;
+	float: right;
+	border-radius: 2px;
+}

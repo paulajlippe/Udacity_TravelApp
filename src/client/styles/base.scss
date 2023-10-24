@@ -1,0 +1,201 @@
+$color_1: white;
+$color_2: black;
+$color_3: #24826A;
+$font-family_1: "Gill Sans", sans-serif;
+$font-family_2: Helvetica, serif;
+$font-family_3: "Courier New", monospace;
+$background-color_1: whitesmoke;
+$background-color_2: #666;
+$background-color_3: #333;
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {        
+    background-color: white;
+}
+#resultsTable {
+    table {
+        color: black;
+        border: 2px solid $background-color_3;
+        border-radius: 3px;
+        background-color: whitesmoke;
+        padding: 10px;
+        width: 100%;
+    }
+
+    tr, th, td {
+        font-family: $font-family_2;
+        font-size: small;
+        text-align: left;
+        padding: 10px;
+        border: 1px solid #333;
+    }
+    tr:nth-child(even){background-color: white}
+}
+section {
+    max-width: 800px;
+    margin: 50px auto;
+}
+h1 {
+    margin: 1em;
+    font-family: $font-family_1;
+    font-size: xx-large;
+    color: $color_1;
+    text-transform: uppercase;
+}
+h2 {
+    margin: 1.5em;
+    font-family: $font-family_2;
+    font-size: large;   
+    color: $background-color_1;
+    // font-style: italic;
+}
+h3 {
+    margin: 1.5em;
+    font-family: $font-family_1;
+    font-size: medium;
+    color: $color_1;
+} 
+h4 {
+    font-family: $font-family_1;
+    font-size: large;
+    color: $color_3;
+    text-transform: uppercase;
+} 
+h5 {
+    font-family: $font-family_1;
+    font-size: medium;
+    color: $color_2;
+} 
+p {
+    font-family: $font-family_2;
+    font-size: medium;
+    color: $color_2;   
+}
+a {
+    font-family: $font-family_1;
+    font-size: medium;
+    color: $color_3;
+}
+
+  
+  // UI Updated Section
+
+  .travel-planner{
+      max-width: 100%;
+      padding: 15px;
+      background: $background-color_3;
+      color: $color_3;
+      border-radius: 0.7rem;
+  
+  }
+  #create-plan{
+      line-height: 38px;
+      
+  }
+#app {
+    display: grid;
+    grid-auto-rows: .1fr .05fr .05fr .05fr .1fr .50fr;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    "hd"
+    "zip"
+    "feel"
+    "btn"
+    "ct"
+    "main";
+    height:100vh;
+    background: $background-color_3;
+    justify-content: center;
+    grid-gap: 1em;
+}
+  .content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .holder{
+    display:flex;
+    padding: 20px;
+    text-align: center;
+
+}
+.zip{
+    grid-area: zip;
+}
+.feel{
+    grid-area: feel;
+}
+#countdown{
+    text-align:center;
+    grid-area: ct;
+    font-size: medium;
+}
+#notes{
+    display:block;
+}
+img{
+    width: 100%;
+    height: 300px;
+}
+.headline {
+    grid-area: hd;
+    text-align: center;
+    font-size: large;
+    // background-image: url("../views/clouds.png") ;
+    // background-repeat: repeat-x;
+    // background-size: 300px;
+}
+.title{
+  text-align:center;
+}
+
+.card{
+    background: $background-color_2;
+    margin:20px;
+    grid-area: main;
+    width: 500px;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0 10px 20px $background-color_1
+}
+#notes{
+    text-align: center;
+}
+.card-body>button{
+    text-align:right;
+}
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: $background-color_2;
+    z-index: 99;
+    text-align: center;
+    background-size: 50%;
+    // background-image: url("../views/faster.gif");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+.main-img{
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+// #planner-results{
+//     display: none;
+// }

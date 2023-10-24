@@ -1,0 +1,190 @@
+$color_1: white;
+$color_2: black;
+$color_3: #24826A;
+$font-family_1: "Gill Sans", sans-serif;
+$font-family_2: Helvetica, serif;
+$font-family_3: "Courier New", monospace;
+$background-color_1: whitesmoke;
+$background-color_2: #ccc;
+$background-color_3: #333;
+$background-color_4: #24826A;
+
+.title {
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px $color_3;
+    font-size: 26px;
+    color: $color_3;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    width: 250px;
+    height: 100%;
+    text-align: center;
+    word-wrap: normal;
+    margin: 5px;
+}
+.results {
+	border: 2px solid $background-color_3;
+	border-radius: 3px;
+	padding: 40px;
+	background-color: $background-color_1;
+}
+#results{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: $color_2 1px;
+    background-color: $background-color_2;
+    border-radius: 15px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 10px 20px 0 $background-color_1;
+    font-family: $font-family_2;
+}
+.resultsHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 100%;
+    text-align: center;
+    word-wrap: normal;
+    margin: 5px;
+}
+
+#resultsHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 100%;
+    text-align: center;
+    word-wrap: normal;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#zipCode, #countryCode  {
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    border: $background-color_1 1px solid;
+    margin: 10px 0px;
+    border-radius: 15px;
+}
+
+#location {
+    font-size: 15px;
+    color:$color_3;
+    margin-bottom: 5px;
+}
+
+#temp, #weather, #date {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#map {
+    width: 180px;
+    height: 100px;
+    margin-top: 5px;
+}
+
+#journal {
+    width: 80%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    word-wrap: normal;
+    border: $background-color_2 1px solid;
+    box-shadow: 0 1px 1px 0 $background-color_1;
+    margin: 10px 0px;
+    border-radius: 15px;
+    font-family: $font-family_2;
+}
+
+i {
+    margin: 0 10px;
+}
+
+#postData {
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    background-color: $background-color_1;
+    border: $color_3 1px solid;
+    box-shadow: 0 1px 1px 0 $background-color_2;
+    word-wrap: normal;
+    margin: 10px;
+    font-family: $font-family_2;
+}
+
+#addEntry {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: $color_2 3px solid;
+    background-color:$color_3;
+    color: $color_2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: width 1s height 2s;
+}
+
+#addEntry:hover {
+    width: 64px;
+    height: 64px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: $background-color_2 3px solid;
+}
+
+.card {
+    box-shadow: 0 1px 2px 0 $background-color_2;
+    transition: 0.3s;
+    width: 600px;
+    height: 100%;
+    margin: 5px 0;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: $color_3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover {
+    box-shadow: 0 2px 4px 0 $background-color_2;
+}
+
+
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+@media screen and (min-width: 350px) {
+    #app {
+        width: 300px;
+        margin: auto;
+        margin-top: auto;
+    }
+}
