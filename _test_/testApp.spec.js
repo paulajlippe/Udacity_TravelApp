@@ -1,14 +1,15 @@
-import { checkURL } from "../src/client/js/nameChecker";
+import 'regenerator-runtime/runtime' //ref: https://flaviocopes.com/parcel-regeneratorruntime-not-defined/
 
-describe("Testing the submit functionality", () => {
+const app = require('../server/server.js');
+const supertest = require('supertest');
+const request = supertest(app);
 
-  test("Testing the checkForName() function", () => {
-    expect(checkURL).toBeDefined();
-  });
-});
+describe('Test endpoint', () => {
+    test('Get 200 server response', async done => {
+        const res = await request.get('/')
 
-describe('Testing if "checkURL()" is a valid function', () => {
-  test('"checkURL() has to be a function', async () => {
-    expect(typeof checkURL).toBe("function");
-  });
-});
+        expect(res.status).toBe(200)
+       
+        done()
+    })
+})
