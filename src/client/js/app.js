@@ -13,14 +13,14 @@ let weatherCondition = document.getElementById('weatherCondition');
 
 async function handleSubmit(event) {
     event.preventDefault()
-    //Input data selectors
+
+// INPUT DATA
     let formPlace = document.getElementById('loc-input').value;
     console.log("The destination is",formPlace);
     let formStart = document.getElementById('startDate').value;
     console.log("Departure date: ",formStart);
     let formReturn = document.getElementById('returnDate').value;
     console.log("Return date: ",formReturn);
-
 
 // DATE
     const today = new Date();
@@ -92,7 +92,7 @@ async function handleSubmit(event) {
 
 // UPDATE UI
 function updateUI(result){
-    ///Results after successful submission 
+    // Results after successful submission 
     console.log('Results: ', result)
 
     plannerResults.style.display = 'block';
@@ -118,12 +118,12 @@ const dateSplit = (d) => {
 
 // PRINT
 const printBtn = () => {
-    location.reload();
+    window.print();
 }
 
 // RESET
 const deleteBtn = () => {
-    window.print();
+    location.reload();
 }
 
 export { handleSubmit, updateUI, dateSplit, printBtn, deleteBtn }

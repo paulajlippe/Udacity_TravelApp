@@ -11,19 +11,19 @@ $background-color_3: #333;
 $background-color_4: #24826A;
 
 .travel-planner{
-    max-width: 100%;
+    max-width: 85%;
     padding: 15px;
-    background: #467bdd;
-    color: white;
+    background:$background-color_4;
+    color: $color_1;
     border-radius: 0.7rem;
 }
 #create-plan{
-    line-height: 38px;
+    line-height: 40px;
 }
 label {
     display: flex;
     align-items: center;
-    font-size: 1.125rem;
+    font-size: large;
     margin: 10px;
 } 
 input {
@@ -32,7 +32,7 @@ input {
     width: 85%;
     height: 2.375rem;
     padding: 0.375rem 0.75rem;
-    color: #333;
+    color: $color_2;
     background-color: $background-color_1;
     border: 1px solid $color_2;
     border-radius: 0.25rem;
