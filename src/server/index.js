@@ -29,7 +29,6 @@ function listening(){
 }
 module.exports = server;
 
-
 //API Variables 
 ////Geonames Webservices 
 const geoUrl = ' http://api.geonames.org/searchJSON?q=';
@@ -43,8 +42,8 @@ const wBitApi = `&key=${process.env.Weather_API}`;
 const pixabayUrl = `https://pixabay.com/api/?key=${process.env.PIXABAY}`;
 
 
-// POSTS routes
-app.post('/newTrip', (req, res)=>{
+// POST routes
+app.post('/trip', (req, res)=>{
   let userData = req.body;
   let userEntry = {
     location: userData.Location,
@@ -91,8 +90,8 @@ app.get('/weatherBit', async(req, res) =>{
   const data = resonse.data[weatherDay];
   console.log(`Data from WeatherBit`, data);
     try {
-      plannerData['maxTemp'] = data.maxTemp;
-      plannerData['minTemp'] = data.lowTemp;
+      plannerData['highTemp'] = data.max_temp;
+      plannerData['lowTemp'] = data.min_temp;
       plannerData['description'] = data.weather.description;
       console.log('Planner data after WeatherBit: ',plannerData);
       res.send(data);
@@ -103,12 +102,12 @@ app.get('/weatherBit', async(req, res) =>{
 })
 
 // Pixabay GET
-app.get('/pixabay', async(req, res) =>{
+app.get('/pixabay', async (req, res) =>{
   const pBUrl = `${pixabayUrl}&q=${plannerData.city}&image_type=photo`;
   console.log('The pixabay url: ', pBUrl);
   fetch(pBUrl).then(res => res.json()).then(data =>{
     try {
-      plannerData['imageURL'] = data.hits[0].webformatURL;
+      plannerData['image'] = data.hits[0].webformatURL;
       res.send(data);
     }catch (e) {
       console.log("Error: ", e);

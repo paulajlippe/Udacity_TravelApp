@@ -41,29 +41,28 @@
           <input type="submit" value="Start Your Plan" id="submit-btn" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
         </div>
       </form>
-
     </section>  
+
 <!-- Results -->
     <section class="results" id="plannerResults">
 
-        <div class="img-info">
-            <img alt="" class="mainImg" id="mainImg">
+        <div class="input">
+            <img id="image"  class="image"  alt="">
         </div>
 
         <div class="travel-info">
-            <h4 class="place-info">My trip to: <span class="city"></span>, <span class="country"></span></h4>
+            <h4 class="place-info">Trip details: <span class="city"></span>, <span class="country"></span></h4>
                 <p id="dep-date">Departure Date: <span id="departure"></span></p>
+            <div class="days-away">Your travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away</div>
+            <br></br>
+            <div class="weather-info">
+                <h4 class="wheather-title">Forecasted weather is:</h4>
+                    <p class="temps">High: <span id="highTemp"></span>&#8451;, Low: <span id="lowTemp"></span>&#8451;</p>
+                    <p class="weather-details">Should have <span id="weatherCondition"></span> throughout the day.</p>
+            </div>
             <div class="print-delete-btns">
                 <button id="print-btn" onclick="window.print()" href="#">Print</a>
                 <button id="delete-btn" onclick="Client.deleteBtn()" href="#">New Trip</a>
-            </div>
-
-            <div class="days-away">Your Travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away</div>
-
-            <div class="weather-info">
-                <h4 class="wheather-title">Typical Weather for then is:</h4>
-                    <p class="temps">High: <span id="highTemp"></span>&#8451;, Low: <span id="lowTemp"></span>&#8451;</p>
-                    <p class="weather-details">Mostly <span id="weatherCondition"></span> throughout the day.</p>
             </div>
         </div>
     </section>  

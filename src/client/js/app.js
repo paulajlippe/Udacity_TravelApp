@@ -1,5 +1,5 @@
 //Global Variables 
-let image = document.getElementById('mainImg');
+let image = document.getElementById('image');
 let cityClasses = document.getElementsByClassName('city');
 let countryClasses =document.getElementsByClassName('country');
 let plannerClass = document.getElementsByClassName('travel-planner');
@@ -16,18 +16,17 @@ async function handleSubmit(event) {
     event.preventDefault()
     //Input data selectors
     let formPlace = document.getElementById('loc-input').value;
-    console.log("The place is ",formPlace);
+    console.log("The destination is",formPlace);
     let formStart = document.getElementById('startDate').value;
-    console.log("The department date is ",formStart);
+    console.log("Departure date: ",formStart);
     let formReturn = document.getElementById('returnDate').value;
-    console.log("The return date is ",formReturn);
+    console.log("Return date: ",formReturn);
 
 
     //Instances for days' Calculations
     const today = new Date();
     const startDate = new Date(formStart);
     const endDate = new Date(formReturn);
-    
 
     const tripTime = Math.abs(endDate - startDate);
     const tripDays = Math.ceil(tripTime / (1000 * 60 * 60 * 24));
@@ -38,7 +37,7 @@ async function handleSubmit(event) {
     console.log(toTripDays + " days to depart");   
 
 
-    await fetch('http://localhost:3000/newTrip',{
+    await fetch('http://localhost:3000/trip',{
         method: "POST",
         mode: "cors",
         headers: {
@@ -53,7 +52,6 @@ async function handleSubmit(event) {
             UntilTrip: toTripDays
 
         })
-
     });
 
     let res = await fetch('http://localhost:3000/geoNames',{
@@ -63,42 +61,41 @@ async function handleSubmit(event) {
             "Content-Type": "application/json",
             "Access-Control-Allow-Orign": "*",
         }
-        
     });
-    res = await fetch('http://localhost:3000/weatherBit',{
-        method: "GET",
-        mode: "cors",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Orign": "*",
-        }
-    })
-    res = await fetch('http://localhost:3000/pixabay',{
-        method: "GET",
-        mode: "cors",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Orign": "*",
-        }
-    })
-    res = await fetch('http://localhost:3000/all',{
-        method: "GET",
-        mode: "cors",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Orign": "*",
-        }
+        res = await fetch('http://localhost:3000/weatherBit',{
+            method: "GET",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Orign": "*",
+            }
+        })
+        res = await fetch('http://localhost:3000/pixabay',{
+            method: "GET",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Orign": "*",
+            }
+        })
+        res = await fetch('http://localhost:3000/all',{
+            method: "GET",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Orign": "*",
+            }
     })
  
     const dataPlanner = await res.json();
     updateUI(dataPlanner);
 }
 
-//Update UI Function after calling server APIs
+// UPDATE UI
 
 function updateUI(result){
     ///Results after successful submission 
-    console.log('The result are: ', result)
+    console.log('Results: ', result)
 
     //Show Results 
     plannerResults.style.display = 'block';
@@ -110,13 +107,14 @@ function updateUI(result){
         cityClasses[i].innerHTML = result.city;
         countryClasses[i].innerHTML = result.country;
     }   
-    // image.setAttribute('src', result.imageUrl);
-    //Update Dates, Days until trip, Temperatures and Weather conditions 
-    // departureDate.innerHTML = dateSplit(result.startDate);
-    // daysUntilTrip.innerHTML = result.untilTrip;
-    highTemp.innerHTML =result.maxTemp;
-    lowTemp.innerHTML = result.minTemp;
-    weatherCondition.innerHTML = result.description;
+    image.setAttribute('src', result.image);
+        console.log(image)
+        //Update Dates, Days until trip, Temperatures and Weather conditions 
+        departureDate.innerHTML = dateSplit(result.startDate);
+        daysUntilTrip.innerHTML = result.untilTrip;
+        highTemp.innerHTML = result.highTemp;
+        lowTemp.innerHTML = result.lowTemp;
+        weatherCondition.innerHTML = result.description;
 }
 
 //Make the format date (yyyy-mm-dd) 

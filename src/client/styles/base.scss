@@ -269,13 +269,6 @@ body{
     font-weight: 500;
     text-align: center;
 }
-h2{
-    font-size: 1.5em;
-    font-weight: 500;
-}
-// .instructions{
-   
-// }
 .travel-planner{
     max-width: 100%;
     padding: 15px;
@@ -351,7 +344,7 @@ input    {
     border-radius: 4px;
     margin: 15px;
 }
-#save-btn{
+#save-btn {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     background-color: green;
     font-size: 1.2em;
@@ -360,11 +353,12 @@ input    {
     border-radius: 4px;
     margin: 15px;
 }
-.mainImg{
+.image {
     max-width: 250px;
     text-align: center;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    margin: 15px;
 }
 // #planner-results{
 //     display: none;
