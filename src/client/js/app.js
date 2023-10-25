@@ -49,7 +49,6 @@ async function handleSubmit(event) {
             EndDate: endDate,
             Duration: tripDays,
             UntilTrip: toTripDays
-
         })
     });
 

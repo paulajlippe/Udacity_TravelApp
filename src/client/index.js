@@ -1,8 +1,9 @@
-import { handleSubmit } from './js/app';
-import { updateUI } from './js/app';
-import { dateSplit } from './js/app';
-import { printBtn } from './js/app';
-import { deleteBtn } from './js/app';
+import { handleSubmit } from './js/app'
+import { updateUI } from './js/app'
+import { dateSplit } from './js/app'
+import { printBtn } from './js/app'
+import { deleteBtn } from './js/app'
+// import { results } from './js/styles'
 
 import './styles/base.scss'
 import './styles/form.scss'
@@ -14,4 +15,5 @@ export{
     dateSplit,
     printBtn,
     deleteBtn,
+    // results,
 }

@@ -81,6 +81,16 @@ a {
     margin: 25px 25px;
     padding: 6px 24px;
 }
+#deleteBtn {
+    background: $color_4;
+    border: 1px solid $color_3;
+    box-shadow:  3px $color_2;
+    border-radius: 5px;
+    color: $color_1;
+    font-size: medium;
+    margin: 25px 25px;
+    padding: 6px 24px;
+}
 .image {
     max-width: 250px;
     text-align: center;

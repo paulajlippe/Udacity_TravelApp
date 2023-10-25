@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Udacity Project - Capstone</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -61,6 +62,7 @@
             </div>
             <div class="print-delete-btns">
                 <button id="printBtn" onclick="window.print()">Print</a>
+                <button id="deleteBtn" onclick="Client.deleteBtn()" href="#">Delete</a>
             </div>
         </div>
     </section>  
@@ -83,16 +85,19 @@
     if ('serviceWorker' in navigator) {         
     // Use the window load event to keep the page load performant         
         window.addEventListener('load', () => {             
-            navigator.serviceWorker.register('./dist/service-worker.js').then(function(registration) {
+            navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, function(error) {
-                // Registration Failed
+                // Registration failed
                 console.log('ServiceWorker registration failed: ', error);
                 });
             });
         };       
     </script> 
+         <link rel="stylesheet" type="text/css/scss" href="../styles/base.scss">
+         <link rel="stylesheet" type="text/css/scss" href="../styles/form.scss">
+
 </body>
 
 </html>
