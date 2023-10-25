@@ -1,144 +1,76 @@
-<!-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-            <title>Udacity Project - Capstone</title>
-        <meta charset ="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-
-<body>
-    <header>
-        <div class="header">
-            <h1>Travel App</h1>
-            <h2>Get the weather for any date & location you want to travel to!</h2> 
-        </div>
-    </header>
-
-     <main>
-        <section>
-        <form class = "form">
-          <div id ="input">
-            <label for="city">Enter city name here</label>
-                <input type="text" id="city">
-             placeholder="only latin letters" pattern = "^[a-zA-Z]+(?:[\s-]+[a-zA-Z]+)*$"> 
-            <label for="tripDate">When is the trip?</label>
-                <input type = "text" id="tripDate" placeholder="MM/DD/YYYY">
-             pattern = "^(0?[1-9]|1[012])(\/)(0?[1-9]|[1-2][1-9]|3[01]|[12]0)(\/)((20)\d\d)$"> 
-            <button id="generate" type = "submit"> Generate </button>
-          </div>
-        </form>
-        </section>
-        <section>
-        <div class ="results">
-          <div id = "photoHolder">
-            <img id = "photo">
-          </div>
-          <div class = "resultsTable">
-            <div id = "destination_details">
-              <h4>Here are your trip details:</h4>
-              <div id = "cityName"></div>
-              <div id = "country"></div>
-              <div id = "date"></div>
-              <div id = "daysToTrip"></div>
-            </div>
-            <div id = "weather_details">
-              <h4>And here's weather:</h4>
-              <div id = "lowTemp"></div>
-              <div id = "maxTemp"></div>
-              <div id = "clouds"></div>
-            </div>
-          </div>
-      </div>
-    </section>
-      </main> -->
-
-<!-- <main>
-    <section>
-        <h4>Where would you like to go?</h4></br>
-            <p>Enter the date of travel and postal code of your desired travel location and our service will display the forecasted weather and location picture.</p></br> 
-        <form class="form" onsubmit="return Client.handleSubmit(event)">
-          <h5>Date of Travel</h5>
-            <input id="date" name="departure" placeholder="yyyy/mm/dd"><br></br>
-          <h5>City</h5>
-            <input id="city" name="location"><br></br>
-            <input class="submit" id="submit" type="button" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-        </form>
-    </section>
-</main>
-</body>
-</html>  -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Travel Planner</title>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
-  <script type="text/javascript"src="main.js"></script>
- 
-
+    <meta charset="utf-8">
+    <title>Udacity Project - Capstone</title>
+    <meta charset ="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
   <header>
-    <h1 class="title">Travel Planner App</h1>
+    <div class="title">
+        <h1>Travel App</h1>
+        <h2>Get the weather for any date & location you want to travel to!</h2> 
+    </div>
   </header>
-  <!-- APP START -->
-  <div id="app">
 
-    <!-- Form Part Begin -->
+<main>
+  <div id="app">
     <section class="travel-planner">
       <div>
-        <h4>Let's create your travel plan</h4>
-        <p class="instructions">Add the city, the departure date and the return date. You will see back Weather information,
+        <h2>Let's create your travel plan</h2>
+            <p class="instructions">Add the city, the departure date and the return date. You will see back Weather information,
             and the most important details about your trip. </p>
       </div>
+
       <form action="" id="create-plan" class="plan-form" onsubmit="return Client.handleSubmit(event)">
         <div class="place-plan">
           <label for="location">Add the place you like to go:</label>
-          <input type="text" name="location" id="loc-input" placeholder="e.g. Madrid" required>
+            <input type="text" name="location" id="loc-input" placeholder="e.g. Madrid" required>
         </div>
 
         <div class="plan-dates">
-          <label for="departure">Departure Date:</label>
-          <input id="start-date" name="departure" type="date" required>
-
-          <label for="return">Return Date:</label>
-          <input id="return-date" name="return" type="date" required>
+            <label for="departure">Departure Date:</label>
+                <input id="startDate" name="departure" type="date" required>
+            <label for="return">Return Date:</label>
+                <input id="returnDate" name="return" type="date" required>
         </div>
 
         <div class="submission-plan">
           <input type="submit" value="Start Your Plan" id="submit-btn" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
         </div>
       </form>
-    </section>  <!-- Form Part END -->
-      <!-- Results Begins -->
-    <section class="results" id="planner-results">
-      <div class="img-info">
-        <img alt="" class="main-img" id="mainImg">
-      </div>
-      <div class="travel-info">
-        <h4 class="place-info">My trip to: <span class="city"></span>, <span class="country"></span></h4>
-        <p id="dep-date">Departure Date: <span id="departure"></span></p>
-        
-        <div class="print-delete-btns">
-          <button id="print-btn" onclick="window.print()" href="#">Print</a>
-          <button id="delete-btn" onclick="Client.deleteBtn()" href="#">Delete</a>
-        </div>
-        <div class="days-away">Your Travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away</div>
-        <div class="weather-info">
-          <h4 class="wheather-title">Typical Weather for then is:</h4>
-          <p class="temps">High: <span id="high-temp"></span>&#8451;, Low: <span id="low-temp"></span>&#8451;</p>
-          <p class="weather-details">Mostly <span id="weather-condition"></span> throughout the day.</p>
-        </div>
-      </div>
 
     </section>  
-    <!-- Results Ends  -->
-  </div> 
+<!-- Results -->
+    <section class="results" id="plannerResults">
 
-  <footer>
+        <div class="img-info">
+            <img alt="" class="mainImg" id="mainImg">
+        </div>
+
+        <div class="travel-info">
+            <h4 class="place-info">My trip to: <span class="city"></span>, <span class="country"></span></h4>
+                <p id="dep-date">Departure Date: <span id="departure"></span></p>
+            <div class="print-delete-btns">
+                <button id="print-btn" onclick="window.print()" href="#">Print</a>
+                <button id="delete-btn" onclick="Client.deleteBtn()" href="#">New Trip</a>
+            </div>
+
+            <div class="days-away">Your Travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away</div>
+
+            <div class="weather-info">
+                <h4 class="wheather-title">Typical Weather for then is:</h4>
+                    <p class="temps">High: <span id="highTemp"></span>&#8451;, Low: <span id="lowTemp"></span>&#8451;</p>
+                    <p class="weather-details">Mostly <span id="weatherCondition"></span> throughout the day.</p>
+            </div>
+        </div>
+    </section>  
+  </div> 
+</main>
+
+    <footer>
     <h2>Thanks for using our TravelApp service! 
         <br></br>
     <div id = "API_credits">
@@ -147,19 +79,8 @@
         <a class = "link" href = "https://pixabay.com/api/docs/" target="_blank">Pixabay</a>
       </div>
     </h2>
-</footer>
-  <!-- APP END -->
-  <!-- ADD SERVICE WORKERS -->
+    </footer>
 
-  <!-- <script>
-    // Check that service workers are supported
-    if ('serviceWorker' in navigator) {
-        // Use the window load event to keep the page load performant
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js');
-        });
-    }
-   </script> -->
    <script>     
     // Check that service workers are supported     
     if ('serviceWorker' in navigator) {         

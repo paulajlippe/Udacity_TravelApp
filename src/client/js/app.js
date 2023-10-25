@@ -1,15 +1,15 @@
-//Variables Selectors: 
+//Global Variables 
 let image = document.getElementById('mainImg');
 let cityClasses = document.getElementsByClassName('city');
 let countryClasses =document.getElementsByClassName('country');
 let plannerClass = document.getElementsByClassName('travel-planner');
 let departureDate = document.getElementById('departure');
 let daysUntilTrip = document.getElementById('days');
-let highTemp = document.getElementById('high-temp');
-let lowTemp = document.getElementById('low-temp');
+let highTemp = document.getElementById('highTemp');
+let lowTemp = document.getElementById('lowTemp');
 let formPlan = document.getElementById('create-plan');
-let planResults = document.getElementById("planner-results");
-let weatherCondition = document.getElementById('weather-condition');
+let planResults = document.getElementById("plannerResults");
+let weatherCondition = document.getElementById('weatherCondition');
 
 //Main Form Function
 async function handleSubmit(event) {
@@ -17,9 +17,9 @@ async function handleSubmit(event) {
     //Input data selectors
     let formPlace = document.getElementById('loc-input').value;
     console.log("The place is ",formPlace);
-    let formStart = document.getElementById('start-date').value;
+    let formStart = document.getElementById('startDate').value;
     console.log("The department date is ",formStart);
-    let formReturn = document.getElementById('return-date').value;
+    let formReturn = document.getElementById('returnDate').value;
     console.log("The return date is ",formReturn);
 
 
@@ -28,9 +28,7 @@ async function handleSubmit(event) {
     const startDate = new Date(formStart);
     const endDate = new Date(formReturn);
     
-    // Calculations reference: https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
-    ////const diffTime = Math.abs(date2 - date1);
-    ///const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
     const tripTime = Math.abs(endDate - startDate);
     const tripDays = Math.ceil(tripTime / (1000 * 60 * 60 * 24));
     console.log(tripDays + " trip days")
@@ -40,7 +38,7 @@ async function handleSubmit(event) {
     console.log(toTripDays + " days to depart");   
 
 
-    await fetch('http://localhost:3010/newTrip',{
+    await fetch('http://localhost:3000/newTrip',{
         method: "POST",
         mode: "cors",
         headers: {
@@ -58,7 +56,7 @@ async function handleSubmit(event) {
 
     });
 
-    let res = await fetch('http://localhost:3010/geoNames',{
+    let res = await fetch('http://localhost:3000/geoNames',{
         method: "GET",
         mode: "cors",
         headers: {
@@ -67,7 +65,7 @@ async function handleSubmit(event) {
         }
         
     });
-    res = await fetch('http://localhost:3010/weatherBit',{
+    res = await fetch('http://localhost:3000/weatherBit',{
         method: "GET",
         mode: "cors",
         headers: {
@@ -75,7 +73,7 @@ async function handleSubmit(event) {
             "Access-Control-Allow-Orign": "*",
         }
     })
-    res = await fetch('http://localhost:3010/pixabay',{
+    res = await fetch('http://localhost:3000/pixabay',{
         method: "GET",
         mode: "cors",
         headers: {
@@ -83,7 +81,7 @@ async function handleSubmit(event) {
             "Access-Control-Allow-Orign": "*",
         }
     })
-    res = await fetch('http://localhost:3010/all',{
+    res = await fetch('http://localhost:3000/all',{
         method: "GET",
         mode: "cors",
         headers: {
@@ -103,7 +101,7 @@ function updateUI(result){
     console.log('The result are: ', result)
 
     //Show Results 
-    planResults.style.display = 'block';
+    plannerResults.style.display = 'block';
     //disable form 
     plannerClass[0].style.display = 'none';
  
@@ -112,10 +110,10 @@ function updateUI(result){
         cityClasses[i].innerHTML = result.city;
         countryClasses[i].innerHTML = result.country;
     }   
-    image.setAttribute('src', result.imageUrl);
+    // image.setAttribute('src', result.imageUrl);
     //Update Dates, Days until trip, Temperatures and Weather conditions 
-    departureDate.innerHTML = dateSplit(result.startDate);
-    daysUntilTrip.innerHTML = result.untilTrip;
+    // departureDate.innerHTML = dateSplit(result.startDate);
+    // daysUntilTrip.innerHTML = result.untilTrip;
     highTemp.innerHTML =result.maxTemp;
     lowTemp.innerHTML = result.minTemp;
     weatherCondition.innerHTML = result.description;

@@ -1,12 +1,12 @@
-// $color_1: white;
-// $color_2: black;
-// $color_3: #24826A;
-// $font-family_1: "Gill Sans", sans-serif;
-// $font-family_2: Helvetica, serif;
-// $font-family_3: "Courier New", monospace;
-// $background-color_1: whitesmoke;
-// $background-color_2: #666;
-// $background-color_3: #333;
+$color_1: white;
+$color_2: black;
+$color_3: #24826A;
+$font-family_1: "Gill Sans", sans-serif;
+$font-family_2: Helvetica, serif;
+$font-family_3: "Courier New", monospace;
+$background-color_1: whitesmoke;
+$background-color_2: #666;
+$background-color_3: #333;
 
 // body {
 //     display: flex;
@@ -38,42 +38,42 @@
 // section {
 //     max-width: 800px;
 // }
-// h1 {
-//     margin: 1em;
-//     font-family: $font-family_1;
-//     font-size: xx-large;
-//     color: $color_1;
-//     text-transform: uppercase;
-// }
-// h2 {
-//     margin: 1.5em;
-//     font-family: $font-family_2;
-//     font-size: large;   
-//     color: $background-color_1;
-//     // font-style: italic;
-// }
-// h3 {
-//     margin: 1.5em;
-//     font-family: $font-family_1;
-//     font-size: medium;
-//     color: $color_1;
-// } 
-// h4 {
-//     font-family: $font-family_1;
-//     font-size: large;
-//     color: $color_3;
-//     text-transform: uppercase;
-// } 
-// h5 {
-//     font-family: $font-family_1;
-//     font-size: medium;
-//     color: $color_2;
-// } 
-// p {
-//     font-family: $font-family_2;
-//     font-size: medium;
-//     color: $color_2;   
-// }
+h1 {
+    margin: 1em;
+    font-family: $font-family_1;
+    font-size: xx-large;
+    color: $color_1;
+    text-transform: uppercase;
+}
+h2 {
+    margin: 1.5em;
+    font-family: $font-family_2;
+    font-size: large;   
+    color: $background-color_1;
+    // font-style: italic;
+}
+h3 {
+    margin: 1.5em;
+    font-family: $font-family_1;
+    font-size: medium;
+    color: $color_1;
+} 
+h4 {
+    font-family: $font-family_1;
+    font-size: large;
+    color: $color_3;
+    text-transform: uppercase;
+} 
+h5 {
+    font-family: $font-family_1;
+    font-size: medium;
+    color: $color_2;
+} 
+p {
+    font-family: $font-family_2;
+    font-size: medium;
+    color: $color_2;   
+}
 // a {
 //     font-family: $font-family_1;
 //     font-size: medium;
@@ -273,9 +273,9 @@ h2{
     font-size: 1.5em;
     font-weight: 500;
 }
-.instructions{
+// .instructions{
    
-}
+// }
 .travel-planner{
     max-width: 100%;
     padding: 15px;
@@ -360,7 +360,7 @@ input    {
     border-radius: 4px;
     margin: 15px;
 }
-.main-img{
+.mainImg{
     max-width: 250px;
     text-align: center;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);

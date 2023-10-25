@@ -64,50 +64,7 @@
             <input class="submit" id="submit" type="button" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
         </form>
     </section>
-
-    <section>
-        <h4>Results</h4>
-          </br>
-            <div class = "results">
-              <h5>Weather Forecast</h5>
-            <div id = "resultsTable">
-              <div id = "departure"></div> 
-              <div id = "location"></div>
-              <div id = "place"></div>
-              <div id = "weather"></div>
-              <img id = "image"></img>
-            </div>
-          </div>
-    </section>
-
 </main>
-<footer>
-    <h2>Thanks for using our TravelApp service! 
-        <br></br>
-    <div id = "API_credits">
-        <a class = "link" href = "https://www.geonames.org/export/web-services.html" target="_blank">GeoNames</a>  | 
-        <a class = "link" href = "https://www.weatherbit.io/api" target="_blank">Weatherbit</a> | 
-        <a class = "link" href = "https://pixabay.com/api/docs/" target="_blank">Pixabay</a>
-      </div>
-    </h2>
-</footer>
-
-<script>     
-    // Check that service workers are supported     
-    if ('serviceWorker' in navigator) {         
-    // Use the window load event to keep the page load performant         
-        window.addEventListener('load', () => {             
-            navigator.serviceWorker.register('./dist/service-worker.js').then(function(registration) {
-                // Registration was successful
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(error) {
-                // Registration Failed
-                console.log('ServiceWorker registration failed: ', error);
-                });
-            });
-        };       
-</script> 
-
 <script type="text/javascript" src="bundle.min.js"></script></body>
 </html>  -->
 
@@ -126,8 +83,6 @@
 <body>
   <header>
     <h1 class="title">Travel Planner App</h1>
-    <p class="instructions">Add the city, the departure date and the return date. You will see back Weather information,
-      and the most important details about your trip. </p>
   </header>
   <!-- APP START -->
   <div id="app">
@@ -136,6 +91,8 @@
     <section class="travel-planner">
       <div>
         <h2>Let's create your travel plan</h2>
+        <p class="instructions">Add the city, the departure date and the return date. You will see back Weather information,
+            and the most important details about your trip. </p>
       </div>
       <form action="" id="create-plan" class="plan-form" onsubmit="return Client.handleSubmit(event)">
         <div class="place-plan">
@@ -145,10 +102,10 @@
 
         <div class="plan-dates">
           <label for="departure">Departure Date:</label>
-          <input id="start-date" name="departure" type="date" required>
+          <input id="startDate" name="departure" type="date" required>
 
           <label for="return">Return Date:</label>
-          <input id="return-date" name="return" type="date" required>
+          <input id="returnDate" name="return" type="date" required>
         </div>
 
         <div class="submission-plan">
@@ -157,9 +114,9 @@
       </form>
     </section>  <!-- Form Part END -->
       <!-- Results Begins -->
-    <section class="results" id="planner-results">
+    <section class="results" id="plannerResults">
       <div class="img-info">
-        <img alt="" class="main-img" id="mainImg">
+        <img alt="" class="mainImg" id="mainImg">
       </div>
       <div class="travel-info">
         <h4 class="place-info">My trip to: <span class="city"></span>, <span class="country"></span></h4>
@@ -172,14 +129,25 @@
         <div class="days-away">Your Travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away</div>
         <div class="weather-info">
           <h4 class="wheather-title">Typical Weather for then is:</h4>
-          <p class="temps">High: <span id="high-temp"></span>&#8451;, Low: <span id="low-temp"></span>&#8451;</p>
-          <p class="weather-details">Mostly <span id="weather-condition"></span> throughout the day.</p>
+          <p class="temps">High: <span id="highTemp"></span>&#8451;, Low: <span id="lowTemp"></span>&#8451;</p>
+          <p class="weather-details">Mostly <span id="weatherCondition"></span> throughout the day.</p>
         </div>
       </div>
 
     </section>  
     <!-- Results Ends  -->
   </div> 
+
+  <footer>
+    <h2>Thanks for using our TravelApp service! 
+        <br></br>
+    <div id = "API_credits">
+        <a class = "link" href = "https://www.geonames.org/export/web-services.html" target="_blank">GeoNames</a>  | 
+        <a class = "link" href = "https://www.weatherbit.io/api" target="_blank">Weatherbit</a> | 
+        <a class = "link" href = "https://pixabay.com/api/docs/" target="_blank">Pixabay</a>
+      </div>
+    </h2>
+</footer>
   <!-- APP END -->
   <!-- ADD SERVICE WORKERS -->
 
