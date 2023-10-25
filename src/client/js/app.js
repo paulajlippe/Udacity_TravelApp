@@ -1,4 +1,4 @@
-//Global Variables 
+// GLOBAL VARIABLES
 let image = document.getElementById('image');
 let cityClasses = document.getElementsByClassName('city');
 let countryClasses =document.getElementsByClassName('country');
@@ -11,7 +11,6 @@ let formPlan = document.getElementById('create-plan');
 let planResults = document.getElementById("plannerResults");
 let weatherCondition = document.getElementById('weatherCondition');
 
-//Main Form Function
 async function handleSubmit(event) {
     event.preventDefault()
     //Input data selectors
@@ -23,7 +22,7 @@ async function handleSubmit(event) {
     console.log("Return date: ",formReturn);
 
 
-    //Instances for days' Calculations
+// DATE
     const today = new Date();
     const startDate = new Date(formStart);
     const endDate = new Date(formReturn);
@@ -36,7 +35,7 @@ async function handleSubmit(event) {
     const toTripDays = Math.ceil(toTripTime / (1000 * 60 * 60 * 24));
     console.log(toTripDays + " days to depart");   
 
-
+// FETCH
     await fetch('http://localhost:3000/trip',{
         method: "POST",
         mode: "cors",
@@ -97,19 +96,14 @@ function updateUI(result){
     ///Results after successful submission 
     console.log('Results: ', result)
 
-    //Show Results 
     plannerResults.style.display = 'block';
-    //disable form 
     plannerClass[0].style.display = 'none';
  
-    //Update place info everywhere 
     for(var i=0; i < cityClasses.length && i <countryClasses.length ; i++){
         cityClasses[i].innerHTML = result.city;
         countryClasses[i].innerHTML = result.country;
     }   
-    image.setAttribute('src', result.image);
-        console.log(image)
-        //Update Dates, Days until trip, Temperatures and Weather conditions 
+        image.setAttribute('src', result.image);
         departureDate.innerHTML = dateSplit(result.startDate);
         daysUntilTrip.innerHTML = result.untilTrip;
         highTemp.innerHTML = result.highTemp;
@@ -118,15 +112,19 @@ function updateUI(result){
 }
 
 //Make the format date (yyyy-mm-dd) 
-////with split() function from 'T' where we take the first Substring | ref: https://www.w3schools.com/jsref/jsref_split.asp
 const dateSplit = (d) => {
     let upDate = d.split('T');
     return upDate[0];
 }
 
-//Delete the current result with reload all entire page like refresh browser button 
-const deleteBtn = () => {
-     location.reload();
+// PRINT
+const printBtn = () => {
+    location.reload();
 }
 
-export { handleSubmit, updateUI, dateSplit, deleteBtn }
+// RESET
+const deleteBtn = () => {
+    window.print();
+}
+
+export { handleSubmit, updateUI, dateSplit, printBtn, deleteBtn }

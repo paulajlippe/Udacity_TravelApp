@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>Udacity Project - Capstone</title>
-    <meta charset ="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="main.css" rel="stylesheet"></head>
 
 <body>
   <header>
-    <div class="title">
+    <div class="header">
         <h1>Travel App</h1>
         <h2>Get the weather for any date & location you want to travel to!</h2> 
     </div>
@@ -26,8 +26,8 @@
 
       <form action="" id="create-plan" class="plan-form" onsubmit="return Client.handleSubmit(event)">
         <div class="place-plan">
-          <label for="location">Add the place you like to go:</label>
-            <input type="text" name="location" id="loc-input" placeholder="e.g. Madrid" required>
+          <label for="location">Where would you like to go:</label>
+            <input type="text" name="location" id="loc-input" placeholder="e.g. Dallas" required>
         </div>
 
         <div class="plan-dates">
@@ -38,7 +38,7 @@
         </div>
 
         <div class="submission-plan">
-          <input type="submit" value="Start Your Plan" id="submit-btn" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+          <input type="submit" value="Start Your Plan" id="submitBtn" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
         </div>
       </form>
     </section>  
@@ -56,13 +56,12 @@
             <div class="days-away">Your travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away</div>
             <br></br>
             <div class="weather-info">
-                <h4 class="wheather-title">Forecasted weather is:</h4>
+                <h4 class="weather-title">The forecasted weather is:</h4>
                     <p class="temps">High: <span id="highTemp"></span>&#8451;, Low: <span id="lowTemp"></span>&#8451;</p>
                     <p class="weather-details">Should have <span id="weatherCondition"></span> throughout the day.</p>
             </div>
             <div class="print-delete-btns">
-                <button id="print-btn" onclick="window.print()" href="#">Print</a>
-                <button id="delete-btn" onclick="Client.deleteBtn()" href="#">New Trip</a>
+                <button id="printBtn" onclick="window.print()">Print</a>
             </div>
         </div>
     </section>  

@@ -1,13 +1,59 @@
-// $color_1: white;
-// $color_2: black;
-// $color_3: #24826A;
-// $font-family_1: "Gill Sans", sans-serif;
-// $font-family_2: Helvetica, serif;
-// $font-family_3: "Courier New", monospace;
-// $background-color_1: whitesmoke;
-// $background-color_2: #ccc;
-// $background-color_3: #333;
-// $background-color_4: #24826A;
+$color_1: white;
+$color_2: black;
+$color_3: #24826A;
+$color_4: red;
+$font-family_1: "Gill Sans", sans-serif;
+$font-family_2: Helvetica, serif;
+$font-family_3: "Courier New", monospace;
+$background-color_1: whitesmoke;
+$background-color_2: #666;
+$background-color_3: #333;
+$background-color_4: #24826A;
+
+.travel-planner{
+    max-width: 100%;
+    padding: 15px;
+    background: #467bdd;
+    color: white;
+    border-radius: 0.7rem;
+}
+#create-plan{
+    line-height: 38px;
+}
+label {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    margin: 10px;
+} 
+input {
+    margin: 10px auto;
+    display: block;
+    width: 85%;
+    height: 2.375rem;
+    padding: 0.375rem 0.75rem;
+    color: #333;
+    background-color: $background-color_1;
+    border: 1px solid $color_2;
+    border-radius: 0.25rem;
+    box-shadow:  3px $color_2;
+}
+#submitBtn {
+	background-color: $background-color_3;
+    border: 1px solid $color_3;
+    box-shadow:  3px $color_2;
+    border-radius: 5px;
+	display: inline-block;
+	cursor: pointer;
+	color: $color_1;
+	font-family: $font-family_2;;
+	padding: 6px 24px;
+    margin: 25px auto;
+}
+#submit-btn:hover {
+    background: $background-color_4;
+    color: $color_1;
+}
 
 // form {
 // 	border: 2px solid $background-color_3;

@@ -1,6 +1,6 @@
 // Print Button
 
-export function printButton() {
+export function print() {
 
     // Print Area
     const formOutput = document.querySelector('.print-area').innerHTML;
