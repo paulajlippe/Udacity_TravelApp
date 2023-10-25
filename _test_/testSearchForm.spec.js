@@ -1,12 +1,13 @@
 import { handleSubmit } from "../client/js/app";
 
-describe('The function "handleSubmit()" should exist' , () => {
-    test('It should has no return ', () => {
-        expect(handleSubmit).toBeDefined();
-    });
+describe("Testing the submit functionality", () => {
+  test("Testing the handleSubmit() function", () => {
+    expect(handleSubmit).toBeDefined();
+  });
 });
-describe('The function "handleSubmit(event)" should be a function' , () => {
-    test('It should be a function', () => {
-        expect(typeof handleSubmit).toBe("function");
-    });
+
+describe('Testing if "handleSubmit()" is a valid function', () => {
+  test('"handleSubmit() has to be a function', async () => {
+    expect(typeof handleSubmit).toBe("function");
+  });
 });

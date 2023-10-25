@@ -16,12 +16,11 @@
   </header>
 
 <main>
-  <div id="app">
+  <div id="input">
     <section class="travel-planner">
       <div>
-        <h2>Let's create your travel plan</h2>
-            <p class="instructions">Add the city, the departure date and the return date. You will see back Weather information,
-            and the most important details about your trip. </p>
+        <h2>Create your travel plan</h2>
+            <p class="instructions">Add your destination and travel dates and the forecasted weather will appear below. </p>
       </div>
 
       <form action="" id="create-plan" class="plan-form" onsubmit="return Client.handleSubmit(event)">
@@ -54,7 +53,7 @@
             <h4 class="place-info">Trip details: <span class="city"></span>, <span class="country"></span></h4>
                 <p id="dep-date">Departure Date: <span id="departure"></span></p>
             <div class="days-away">Your travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away</div>
-            <br></br>
+                <br></br>
             <div class="weather-info">
                 <h4 class="weather-title">The forecasted weather is:</h4>
                     <p class="temps">High: <span id="highTemp"></span>&#8451;, Low: <span id="lowTemp"></span>&#8451;</p>
@@ -63,22 +62,21 @@
             <div class="print-delete-btns">
                 <button id="printBtn" onclick="window.print()">Print</a>
             </div>
-     
         </div>
     </section>  
   </div> 
 </main>
 
-    <footer>
+<footer>
     <h2>Thanks for using our TravelApp service! 
         <br></br>
     <div id = "API_credits">
         <a class = "link" href = "https://www.geonames.org/export/web-services.html" target="_blank">GeoNames</a>  | 
         <a class = "link" href = "https://www.weatherbit.io/api" target="_blank">Weatherbit</a> | 
         <a class = "link" href = "https://pixabay.com/api/docs/" target="_blank">Pixabay</a>
-      </div>
+    </div>
     </h2>
-    </footer>
+</footer>
 
    <script>     
     // Check that service workers are supported     

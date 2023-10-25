@@ -12,9 +12,15 @@ $background-color_4: #24826A;
 
 body {
     font-family: $font-family_2;
-    max-width: 350px;
+    width: 85%;
     text-align: center;
     background-color: $background-color_3;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 40px;
+	background-color: $background-color_3;
 }
 .header {
     background-color: $background-color_2;
@@ -99,7 +105,7 @@ a {
     background-color: $background-color_2;
     border-radius: 15px;
     margin: 10px;
-    align-items: center;
+    align-items: right;
     justify-content: center;
     font-size: 18px;
     box-shadow: 0 10px 20px 0 $background-color_1;
@@ -110,7 +116,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 350px;
     height: 100%;
     text-align: center;
     word-wrap: normal;
@@ -120,9 +126,9 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 250px;
+    width: 500px;
     height: 100%;
-    text-align: center;
+    text-align: right;
     word-wrap: normal;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -134,14 +140,15 @@ footer {
 	background-color: $background-color_3;
 }
 
+
 @media (min-width: 768px) {
     body{
         width: 600px;
-        max-width: 70%;
+        max-width: 80%;
        margin: auto;
     }
     .main-img {
         width: 400px;
-      max-width: 500px;
+      max-width: 600px;
     }
   }

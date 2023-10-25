@@ -52,7 +52,7 @@ app.post('/trip', (req, res)=>{
 })
 
 // GET GEONAMES
-app.get('/geoNames', async(req, res) => {
+app.get('/geo', async(req, res) => {
     let newPlace = plannerData.location;
     console.log(`Server Side: ${newPlace}`);
     const geoNamesUrl = `${GEO_URL}${newPlace}${GEO_USER}`;
@@ -74,7 +74,7 @@ app.get('/geoNames', async(req, res) => {
 })
 
 // GET WEATHERBIT
-app.get('/weatherBit', async(req, res) =>{
+app.get('/weather', async(req, res) =>{
     const wUrl = `${WB_URL}lat=${plannerData.lat}&lon=${plannerData.long}${WB_KEY}`;
     fetch(wUrl).then(res => res.json()).then(resonse =>{
     let weatherDay = plannerData.untilTrip;

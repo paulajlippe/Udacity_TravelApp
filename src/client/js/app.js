@@ -53,7 +53,7 @@ async function handleSubmit(event) {
         })
     });
 
-    let res = await fetch('http://localhost:3000/geoNames',{
+    let res = await fetch('http://localhost:3000/geo',{
         method: "GET",
         mode: "cors",
         headers: {
@@ -61,7 +61,7 @@ async function handleSubmit(event) {
             "Access-Control-Allow-Orign": "*",
         }
     });
-        res = await fetch('http://localhost:3000/weatherBit',{
+        res = await fetch('http://localhost:3000/weather',{
             method: "GET",
             mode: "cors",
             headers: {
@@ -91,7 +91,6 @@ async function handleSubmit(event) {
 }
 
 // UPDATE UI
-
 function updateUI(result){
     ///Results after successful submission 
     console.log('Results: ', result)
@@ -99,7 +98,7 @@ function updateUI(result){
     plannerResults.style.display = 'block';
     plannerClass[0].style.display = 'none';
  
-    for(var i=0; i < cityClasses.length && i <countryClasses.length ; i++){
+    for (var i=0; i < cityClasses.length && i <countryClasses.length ; i++){
         cityClasses[i].innerHTML = result.city;
         countryClasses[i].innerHTML = result.country;
     }   
@@ -111,7 +110,7 @@ function updateUI(result){
         weatherCondition.innerHTML = result.description;
 }
 
-//Make the format date (yyyy-mm-dd) 
+// DATE FORMAT
 const dateSplit = (d) => {
     let upDate = d.split('T');
     return upDate[0];
