@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Udacity Project - Capstone</title>
+        <title>Udacity Project - Capstone</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css/scss" href="../styles/base.scss">
+        <link rel="stylesheet" type="text/css/scss" href="../styles/form.scss">
 </head>
 
 <body>
@@ -20,13 +21,13 @@
   <div id="input">
     <section class="travel-planner">
       <div>
-        <h2>Create your travel plan</h2>
-            <p class="instructions">Add your destination and travel dates and the forecasted weather will appear below. </p>
+        <h4>Create your travel plan</h4>
+            <p class="instructions">Add your destination city and travel dates and the forecasted weather will appear below. </p>
       </div>
 
-      <form action="" id="create-plan" class="plan-form" onsubmit="return Client.handleSubmit(event)">
+      <form action="" id="create-plan" class="form" onsubmit="return Client.handleSubmit(event)">
         <div class="place-plan">
-          <label for="location">Where would you like to go:</label>
+          <label for="location">Destination:</label>
             <input type="text" name="location" id="loc-input" placeholder="e.g. Dallas" required>
         </div>
 
@@ -45,37 +46,39 @@
 
 <!-- Results -->
     <section class="results" id="plannerResults">
-
         <div class="input">
-            <img id="image"  class="image"  alt="">
+          <img id="image"  class="image"  alt="">
         </div>
 
         <div class="travel-info">
             <h4 class="place-info">Trip details: <span class="city"></span>, <span class="country"></span></h4>
-                <p id="dep-date">Departure Date: <span id="departure"></span></p>
-            <div class="days-away">Your travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away</div>
-                <br></br>
+                <p id="dep-date">Departure Date: <span id="departure"></span>
+            <div class="days-away">Your travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away.</div></p>
+            <br></br>
+
             <div class="weather-info">
                 <h4 class="weather-title">The forecasted weather is:</h4>
                     <p class="temps">High: <span id="highTemp"></span>&#8451;, Low: <span id="lowTemp"></span>&#8451;</p>
                     <p class="weather-details">Should have <span id="weatherCondition"></span> throughout the day.</p>
             </div>
+
             <div class="print-delete-btns">
                 <button id="printBtn" onclick="window.print()">Print</a>
-                <button id="deleteBtn" onclick="Client.deleteBtn()" href="#">Delete</a>
+                <button id="deleteBtn" onclick="Client.deleteBtn()" href="#">Reset</a>
             </div>
         </div>
+
     </section>  
   </div> 
 </main>
 
 <footer>
     <h2>Thanks for using our TravelApp service! 
-        <br></br>
-    <div id = "API_credits">
-        <a class = "link" href = "https://www.geonames.org/export/web-services.html" target="_blank">GeoNames</a>  | 
-        <a class = "link" href = "https://www.weatherbit.io/api" target="_blank">Weatherbit</a> | 
-        <a class = "link" href = "https://pixabay.com/api/docs/" target="_blank">Pixabay</a>
+            <br></br>
+        <div id = "API_credits">
+            <a class = "link" href = "https://www.geonames.org/export/web-services.html" target="_blank">GeoNames </a> | 
+            <a class = "link" href = "https://www.weatherbit.io/api" target="_blank">Weatherbit </a> | 
+            <a class = "link" href = "https://pixabay.com/api/docs/" target="_blank"> Pixabay</a>
     </div>
     </h2>
 </footer>
@@ -85,7 +88,7 @@
     if ('serviceWorker' in navigator) {         
     // Use the window load event to keep the page load performant         
         window.addEventListener('load', () => {             
-            navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
+            navigator.serviceWorker.register('./dist/service-worker.js').then(function(registration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, function(error) {
@@ -95,9 +98,6 @@
             });
         };       
     </script> 
-         <link rel="stylesheet" type="text/css/scss" href="../styles/base.scss">
-         <link rel="stylesheet" type="text/css/scss" href="../styles/form.scss">
 
 </body>
-
 </html>

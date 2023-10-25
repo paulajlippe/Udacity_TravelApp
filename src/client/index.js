@@ -3,11 +3,9 @@ import { updateUI } from './js/app'
 import { dateSplit } from './js/app'
 import { printBtn } from './js/app'
 import { deleteBtn } from './js/app'
-// import { results } from './js/styles'
 
 import './styles/base.scss'
 import './styles/form.scss'
-import './styles/resets.scss'
 
 export{
     handleSubmit,
@@ -15,5 +13,4 @@ export{
     dateSplit,
     printBtn,
     deleteBtn,
-    // results,
 }
