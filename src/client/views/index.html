@@ -26,20 +26,14 @@
       </div>
 
       <form action="" id="create-plan" class="form" onsubmit="return Client.handleSubmit(event)">
-        <div class="place-plan">
+        <div>
           <label class="location">Destination:</label>
             <input type="text" name="location" id="loc-input" placeholder="e.g. Dallas" required>
-        </div>
-
-        <div class="plan-dates">
-            <label class="departure">Departure Date:</label>
-                <input id="startDate" name="departure" type="date" required>
-            <label class="return">Return Date:</label>
-                <input id="returnDate" name="return" type="date" required>
-        </div>
-
-        <div class="submission-plan">
-          <input type="submit" value="Get Trip Details" id="submitBtn" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+          <label class="departure">Departure Date:</label>
+            <input id="startDate" name="departure" type="date" required>
+          <label class="return">Return Date:</label>
+            <input id="returnDate" name="return" type="date" required>
+            <input type="submit" value="Get Trip Details" id="submitBtn" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
         </div>
       </form>
     </section>  
@@ -50,16 +44,16 @@
           <img id="image"  class="image"  alt="">
         </div>
 
-        <div class="travel-info">
-            <h4 class="place-info">Trip details: <span class="city"></span>, <span class="country"></span></h4>
-                <p id="dep-date">Departure Date: <span id="departure"></span>
-            <div class="days-away">Your travel to <span class="city"></span>, <span class="country"></span> is <span id="days"></span> days away.</div></p>
+        <div>
+          <h4 class="place-info">Trip details:</h4> 
+            <p>Your trip to <span class="city"></span>, <span class="country"></span>leaving on <span id="departure"></span>is <span id="days"></span> days away.</div>
+            </p>
             <br></br>
 
             <div class="weather-info">
-                <h4 class="weather-title">The forecasted weather is:</h4>
-                    <p class="temps">High: <span id="highTemp"></span>&#8451;, Low: <span id="lowTemp"></span>&#8451;</p>
-                    <p class="weather-details">Should have <span id="weatherCondition"></span> throughout the day.</p>
+              <h4 class="weather-title">The forecasted weather is:</h4>
+                <p class="temps">High: <span id="highTemp"></span>&#8451;, Low: <span id="lowTemp"></span>&#8451;</p>
+                <p class="weather-details">Should have <span id="weatherCondition"></span> throughout the day.</p>
             </div>
 
             <div class="print-delete-btns">
