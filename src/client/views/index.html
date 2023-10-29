@@ -27,14 +27,14 @@
 
       <form action="" id="create-plan" class="form" onsubmit="return Client.handleSubmit(event)">
         <div class="place-plan">
-          <label for="location">Destination:</label>
+          <label class="location">Destination:</label>
             <input type="text" name="location" id="loc-input" placeholder="e.g. Dallas" required>
         </div>
 
         <div class="plan-dates">
-            <label for="departure">Departure Date:</label>
+            <label class="departure">Departure Date:</label>
                 <input id="startDate" name="departure" type="date" required>
-            <label for="return">Return Date:</label>
+            <label class="return">Return Date:</label>
                 <input id="returnDate" name="return" type="date" required>
         </div>
 
@@ -83,21 +83,21 @@
     </h2>
 </footer>
 
-   <script>     
-    // Check that service workers are supported     
-    if ('serviceWorker' in navigator) {         
-    // Use the window load event to keep the page load performant         
-        window.addEventListener('load', () => {             
-            navigator.serviceWorker.register('./dist/service-worker.js').then(function(registration) {
-                // Registration was successful
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(error) {
-                // Registration failed
-                console.log('ServiceWorker registration failed: ', error);
-                });
-            });
-        };       
-    </script> 
+        <script>     
+            // Check that service workers are supported     
+            if ('serviceWorker' in navigator) {         
+            // Use the window load event to keep the page load performant         
+                window.addEventListener('load', () => {             
+                    navigator.serviceWorker.register('./dist/service-worker.js').then(function(registration) {
+                        // Registration was successful
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(error) {
+                        // Registration failed
+                        console.log('ServiceWorker registration failed: ', error);
+                        });
+                    });
+                };       
+        </script> 
 
 </body>
 </html>

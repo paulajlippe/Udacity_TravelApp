@@ -16,7 +16,7 @@ This project requires you to build out a travel app that, at a minimum, obtains 
 
 ### Terminal 2:
 
-1: `npm run build`
+1: `npm run dev`
 
 ## The loaders and plugins used are: 
 Babel/core - /preset-env, loader, Cors Express, dotenv, express, Style-loader - node-sass css-loader sass-loader, jest, python2, clean-webpack-plugin, html-webpack-plugin, mini-css-extract-plugin, optimize-css-assets-webpack-plugin, terser-webpack-plugin, workbox-weback-plugin
