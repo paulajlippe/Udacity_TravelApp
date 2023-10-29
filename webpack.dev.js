@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-// const { GenerateSW } = require('workbox-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -47,6 +46,5 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         }),
-        // new GenerateSW(),
     ]
 }
