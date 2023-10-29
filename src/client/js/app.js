@@ -16,7 +16,7 @@ async function handleSubmit(event) {
 
 // INPUT DATA
     let formPlace = document.getElementById('loc-input').value;
-    console.log("The destination is",formPlace);
+    console.log("The destination is ",formPlace);
     let formStart = document.getElementById('startDate').value;
     console.log("Departure date: ",formStart);
     let formReturn = document.getElementById('returnDate').value;

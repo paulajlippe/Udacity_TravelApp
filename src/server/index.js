@@ -1,6 +1,13 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+if (process.env.NODE_ENV !== 'production') {
+    console.log('Welcome to production');
+  }
+  if (process.env.DEBUG) {
+    console.log('Debugging output');
+  }
+
 // Setup empty JS object to act as endpoint for all routes
 let plannerData
 
@@ -16,7 +23,7 @@ const app = express();
 module.exports = app;
 
 // MIDDLEWARE
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static('dist'));
