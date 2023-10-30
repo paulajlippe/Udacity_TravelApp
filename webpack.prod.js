@@ -46,7 +46,9 @@ module.exports = {
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({filename: '[name].css'}),
-        new GenerateSW(),
+        new GenerateSW({
+            swDest: './dist/service-worker.js'
+            }),
         new DotenvPlugin({
             sample: './.env',
             path: './.env'
